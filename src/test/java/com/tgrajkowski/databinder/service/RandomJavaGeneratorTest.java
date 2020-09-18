@@ -12,6 +12,6 @@ class RandomJavaGeneratorTest {
 
     @Test
     void gnerateRandomNumber() {
-        System.out.println(randomJavaGenerator.gnerateRandomNumber());
+        System.out.println(randomJavaGenerator.gnerateRandomNumber(0, 2, 10));
     }
 }

@@ -10,22 +10,24 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class ReportConverter extends AbstractHttpMessageConverter<Report> {
+public class RandomNumberConverter extends AbstractHttpMessageConverter<RandomNumer> {
 
-    public ReportConverter() {
+    public RandomNumberConverter() {
         super(MediaType.TEXT_PLAIN);
     }
 
     @Override
     protected boolean supports(Class<?> clazz) {
-        return Report.class.isAssignableFrom(clazz);
+        return RandomNumer.class.isAssignableFrom(clazz);
     }
 
     @Override
-    protected Report readInternal(Class<? extends Report> clazz, HttpInputMessage inputMessage)
+    protected RandomNumer readInternal(Class<? extends RandomNumer> clazz, HttpInputMessage inputMessage)
             throws IOException, HttpMessageNotReadableException {
         String requestBody = toString(inputMessage.getBody());
         int i = requestBody.indexOf("\n");
@@ -33,19 +35,18 @@ public class ReportConverter extends AbstractHttpMessageConverter<Report> {
             throw new HttpMessageNotReadableException("No first line found");
         }
         StringTokenizer stringTokenizer = new StringTokenizer(requestBody);
-        Report report = new Report();
-        while (stringTokenizer.hasMoreTokens()) {
-            report.getIntegerList().add(Integer.valueOf(stringTokenizer.nextToken()));
-        }
 
-        return report;
+        List<Integer> integerList = new ArrayList<>();
+        while (stringTokenizer.hasMoreTokens()) {
+            integerList.add(Integer.valueOf(stringTokenizer.nextToken()));
+        }
+        return new RandomNumer(integerList);
     }
 
     @Override
-    protected void writeInternal(Report report, HttpOutputMessage outputMessage) throws HttpMessageNotWritableException, IOException {
+    protected void writeInternal(RandomNumer randomNumer, HttpOutputMessage outputMessage) throws HttpMessageNotWritableException, IOException {
         OutputStream outputStream = outputMessage.getBody();
-        String body = report.getReportName() + "\n" +
-                report.getContent();
+        String body = randomNumer.getIntegerList().toString();
         outputStream.write(body.getBytes());
         outputStream.close();
     }

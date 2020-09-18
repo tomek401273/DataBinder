@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class ApplicationConfig {
-    @Value("${random.api}")
+    @Value("${random-api}")
     private String randomApi;
 }

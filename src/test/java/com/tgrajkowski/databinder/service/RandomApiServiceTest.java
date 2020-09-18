@@ -1,10 +1,11 @@
 package com.tgrajkowski.databinder.service;
 
+import com.tgrajkowski.databinder.config.RandomNumer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 @SpringBootTest
 class RandomApiServiceTest {
@@ -13,7 +14,9 @@ class RandomApiServiceTest {
 
     @Test
     void getData() {
-        randomApiService.getData(randomApiService.createURI());
+        RandomNumer randomNumberData = randomApiService.getRandomNumberData(0, 2, 10);
+        System.out.println(randomNumberData);
+
     }
 
     @Test

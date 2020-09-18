@@ -21,8 +21,8 @@ public class NumberCombiner {
 
     public void combineNumbers(){
         List<Integer> integerList= new ArrayList<>();;
-        integerList.add(randomApiService.getData(randomApiService.createURI()));
-        integerList.add(randomJavaGenerator.gnerateRandomNumber());
+        integerList.addAll(randomApiService.getRandomNumberData(2, 0, 10).getIntegerList());
+        integerList.addAll(randomJavaGenerator.gnerateRandomNumber(2, 0 ,10));
 
         System.out.println(integerList);
         int result = numberProcessor.processNumbers(integerList, new AddCalculation());
