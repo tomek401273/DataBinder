@@ -2,6 +2,7 @@ package com.tgrajkowski.databinder.service;
 
 import com.tgrajkowski.databinder.combiner.NumberProcessor;
 import com.tgrajkowski.databinder.combiner.calculation.impl.AddCalculation;
+import com.tgrajkowski.databinder.model.NumberCombination;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,13 +20,11 @@ public class NumberCombiner {
         this.numberProcessor = numberProcessor;
     }
 
-    public void combineNumbers(){
+    public NumberCombination combineNumbers(){
         List<Integer> integerList= new ArrayList<>();;
         integerList.addAll(randomApiService.getRandomNumberData(2, 0, 10).getIntegerList());
         integerList.addAll(randomJavaGenerator.gnerateRandomNumber(2, 0 ,10));
-
-        System.out.println(integerList);
         int result = numberProcessor.processNumbers(integerList, new AddCalculation());
-        System.out.println(result);
+        return new NumberCombination(integerList, result);
     }
 }
