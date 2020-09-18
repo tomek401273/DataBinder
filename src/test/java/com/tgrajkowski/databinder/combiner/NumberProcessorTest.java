@@ -2,12 +2,12 @@ package com.tgrajkowski.databinder.combiner;
 
 import com.tgrajkowski.databinder.combiner.calculation.Calculation;
 import com.tgrajkowski.databinder.combiner.calculation.impl.AddCalculation;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 class NumberProcessorTest {
 

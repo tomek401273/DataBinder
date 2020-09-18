@@ -1,6 +1,8 @@
 package com.tgrajkowski.databinder;
 
-import org.junit.jupiter.api.Test;
+
+import com.tgrajkowski.databinder.service.NumberCombiner;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
