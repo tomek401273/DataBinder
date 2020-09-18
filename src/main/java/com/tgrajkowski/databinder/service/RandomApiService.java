@@ -18,8 +18,8 @@ public class RandomApiService {
         this.applicationConfig = applicationConfig;
     }
 
-    public RandomNumer getRandomNumberData(int countOfNumbers, int min, int max ) {
-        return restTemplate.getForObject(createURI(countOfNumbers, min, max), RandomNumer.class);
+    public RandomNumer getRandomNumberData(URI uri ) {
+        return restTemplate.getForObject(uri, RandomNumer.class);
     }
 
     public URI createURI(int countOfNumbers, int min, int max ) {
