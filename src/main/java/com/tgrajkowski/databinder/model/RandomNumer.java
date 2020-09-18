@@ -1,4 +1,4 @@
-package com.tgrajkowski.databinder.config;
+package com.tgrajkowski.databinder.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

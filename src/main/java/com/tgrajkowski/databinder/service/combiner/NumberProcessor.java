@@ -1,6 +1,6 @@
-package com.tgrajkowski.databinder.combiner;
+package com.tgrajkowski.databinder.service.combiner;
 
-import com.tgrajkowski.databinder.combiner.calculation.Calculation;
+import com.tgrajkowski.databinder.service.combiner.calculation.Calculation;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

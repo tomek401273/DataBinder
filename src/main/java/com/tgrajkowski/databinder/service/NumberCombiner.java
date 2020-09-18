@@ -1,7 +1,7 @@
 package com.tgrajkowski.databinder.service;
 
-import com.tgrajkowski.databinder.combiner.NumberProcessor;
-import com.tgrajkowski.databinder.combiner.calculation.impl.AddCalculation;
+import com.tgrajkowski.databinder.service.combiner.NumberProcessor;
+import com.tgrajkowski.databinder.service.combiner.impl.AddCalculation;
 import com.tgrajkowski.databinder.model.NumberCombination;
 import org.springframework.stereotype.Service;
 

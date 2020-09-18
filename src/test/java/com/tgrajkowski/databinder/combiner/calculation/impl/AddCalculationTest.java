@@ -1,5 +1,6 @@
 package com.tgrajkowski.databinder.combiner.calculation.impl;
 
+import com.tgrajkowski.databinder.service.combiner.impl.AddCalculation;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -16,7 +16,6 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -29,15 +28,15 @@ public class DataBinderControllerTest {
     private NumberCombiner numberCombiner;
 
     @Test
-    public void getNumberCombination1() throws Exception{
-        NumberCombination numberCombination= new NumberCombination(List.of(1, 2), 3);
+    public void getNumberCombination1() throws Exception {
+        NumberCombination numberCombination = new NumberCombination(List.of(1, 2), 3);
         Mockito.when(numberCombiner.combineNumbers()).thenReturn(numberCombination);
 
         mockMvc.perform(get("/number/combination")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8"))
                 .andExpect(status().isOk())
-        .andExpect(jsonPath("$.sum", is(3)))
-        .andExpect(jsonPath("numbers", is(List.of(1, 2))));
+                .andExpect(jsonPath("$.sum", is(3)))
+                .andExpect(jsonPath("numbers", is(List.of(1, 2))));
     }
 }

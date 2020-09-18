@@ -1,7 +1,7 @@
 package com.tgrajkowski.databinder.service;
 
 import com.tgrajkowski.databinder.config.ApplicationConfig;
-import com.tgrajkowski.databinder.config.RandomNumer;
+import com.tgrajkowski.databinder.model.RandomNumer;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
