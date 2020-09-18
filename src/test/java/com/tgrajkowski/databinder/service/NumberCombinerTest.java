@@ -1,0 +1,17 @@
+package com.tgrajkowski.databinder.service;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+class NumberCombinerTest {
+    @Autowired
+    NumberCombiner numberCombiner;
+    @Test
+    void combineNumbers() {
+        numberCombiner.combineNumbers();
+    }
+}
