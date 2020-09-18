@@ -1,0 +1,5 @@
+uruchomienie aplikacji
+mvn spring-boot:run
+
+dane wynikowe dostępne są pod endpointem
+http://localhost:8080/number/combination
